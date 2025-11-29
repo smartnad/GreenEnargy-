@@ -1,0 +1,26 @@
+{
+    "common": {
+        "getQuote": "Get Free Quote",
+        "viewProjects": "View Projects",
+        "contactUs": "Contact Us",
+        "loading": "Loading..."
+    },
+    "home": {
+        "heroTitle": "Power Your Home with Limitless Energy",
+        "heroSubtitle": "Join the solar revolution with Wabsyin. Get up to ₹78,000 subsidy and reduce your electricity bill to zero.",
+        "calculateSavings": "Calculate Your Savings"
+    },
+    "calculator": {
+        "title": "Solar Subsidy Calculator",
+        "monthlyBill": "Monthly Electricity Bill (₹)",
+        "tariff": "Tariff (₹/kWh)",
+        "marketRate": "Market Rate (₹/kW)",
+        "systemSize": "System Size (kW)",
+        "approxCost": "Approx. System Cost",
+        "estSubsidy": "Estimated Subsidy",
+        "netCost": "Net Cost to You",
+        "monthlySavings": "Monthly Savings",
+        "payback": "Payback Period",
+        "checkEligibility": "Check My Subsidy Eligibility"
+    }
+}
