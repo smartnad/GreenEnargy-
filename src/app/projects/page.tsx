@@ -177,7 +177,7 @@ export default function ProjectsPage() {
                                 <motion.div
                                     layout
                                     key={project.id}
-                                    variants={itemVariants}
+                                    variants={itemVariants as any}
                                     initial="hidden"
                                     animate="visible"
                                     exit={{ opacity: 0, scale: 0.9 }}
