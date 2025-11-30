@@ -74,23 +74,59 @@ export default function Hero() {
                         transition={{ duration: 0.8, delay: 0.2 }}
                         className="relative flex items-center justify-center mt-12 lg:mt-0"
                     >
-                        <div className="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] md:w-[400px] md:h-[400px] lg:w-[450px] lg:h-[450px] xl:w-[500px] xl:h-[500px]">
-                            {/* Abstract Solar Ring */}
-                            <div className="absolute inset-0 rounded-full border border-saffron/20 animate-spin-slow-reverse" />
-                            <div className="absolute inset-8 rounded-full border border-india-green/20 animate-spin-slow" />
+                        <div className="relative w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[450px] md:h-[450px] lg:w-[550px] lg:h-[550px] xl:w-[600px] xl:h-[600px] shrink-0 aspect-square">
 
-                            {/* Main Image */}
-                            <div className="absolute inset-0 rounded-full overflow-hidden border-4 border-white/10 shadow-2xl relative z-10">
-                                <img
-                                    src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=2072&auto=format&fit=crop"
-                                    alt="Modern Solar Home"
-                                    className="w-full h-full object-cover"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                            {/* Outer Orbiting Ring */}
+                            <div className="absolute inset-[-20px] rounded-full border border-neutral-200 dark:border-neutral-800 animate-spin-slow-reverse opacity-60" />
+
+                            {/* Inner Glowing Ring */}
+                            <div className="absolute inset-0 rounded-full border-2 border-dashed border-saffron/30 animate-spin-slow" />
+
+                            {/* Main Image Container with Glass Effect Border */}
+                            <div className="absolute inset-4 rounded-full p-2 bg-white/10 backdrop-blur-sm border border-white/20 shadow-2xl z-10">
+                                <div className="w-full h-full rounded-full overflow-hidden relative border-4 border-white/10">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=2072&auto=format&fit=crop"
+                                        alt="Modern Solar Home"
+                                        className="w-full h-full object-cover scale-110 hover:scale-100 transition-transform duration-700"
+                                    />
+                                    {/* Gradient Overlay */}
+                                    <div className="absolute inset-0 bg-gradient-to-tr from-black/40 via-transparent to-saffron/10 pointer-events-none" />
+                                </div>
                             </div>
 
-                            {/* Glow Effect */}
-                            <div className="absolute inset-4 bg-saffron/30 blur-[100px] rounded-full z-0 animate-pulse-slow" />
+                            {/* Floating Badge 1: Savings */}
+                            <motion.div
+                                animate={{ y: [0, -15, 0] }}
+                                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                                className="absolute top-[15%] -left-[5%] z-20 bg-white dark:bg-neutral-900 p-3 rounded-2xl shadow-xl border border-neutral-100 dark:border-neutral-800 flex items-center gap-3"
+                            >
+                                <div className="p-2 bg-green-100 dark:bg-green-900/30 rounded-full text-green-600 dark:text-green-400">
+                                    <Zap className="w-5 h-5 fill-current" />
+                                </div>
+                                <div>
+                                    <p className="text-xs text-neutral-500 dark:text-neutral-400 font-medium">Monthly Savings</p>
+                                    <p className="text-sm font-bold text-neutral-900 dark:text-white">₹4,500+</p>
+                                </div>
+                            </motion.div>
+
+                            {/* Floating Badge 2: Eco Friendly */}
+                            <motion.div
+                                animate={{ y: [0, 15, 0] }}
+                                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                                className="absolute bottom-[20%] -right-[5%] z-20 bg-white dark:bg-neutral-900 p-3 rounded-2xl shadow-xl border border-neutral-100 dark:border-neutral-800 flex items-center gap-3"
+                            >
+                                <div className="p-2 bg-saffron/10 rounded-full text-saffron">
+                                    <Sun className="w-5 h-5 fill-current" />
+                                </div>
+                                <div>
+                                    <p className="text-xs text-neutral-500 dark:text-neutral-400 font-medium">Clean Energy</p>
+                                    <p className="text-sm font-bold text-neutral-900 dark:text-white">100% Green</p>
+                                </div>
+                            </motion.div>
+
+                            {/* Background Glow */}
+                            <div className="absolute inset-10 bg-saffron/40 blur-[120px] rounded-full z-0 animate-pulse-slow pointer-events-none" />
                         </div>
                     </motion.div>
 

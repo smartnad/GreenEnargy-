@@ -2,7 +2,6 @@
 
 import Image from 'next/image'
 import { Award, Users, Target, Heart, CheckCircle } from 'lucide-react'
-import TiltCard from '@/components/ui/TiltCard'
 import { motion } from 'framer-motion'
 
 export default function AboutPage() {
@@ -95,27 +94,35 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* Values Section with 3D Cards */}
-            <section className="py-24 px-6 bg-neutral-50 dark:bg-neutral-900/50">
+            {/* Values Section */}
+            <section className="py-24 px-6 bg-black text-white">
                 <div className="container mx-auto">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl font-bold mb-4 text-neutral-900 dark:text-white">Our Core Values</h2>
-                        <p className="text-neutral-600 dark:text-neutral-400">The principles that guide every installation.</p>
+                    <div className="text-center mb-20">
+                        <h2 className="text-4xl font-bold mb-4 text-white">Our Core Values</h2>
+                        <p className="text-neutral-400 text-lg">The principles that guide every installation.</p>
                     </div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        <TiltCard>
-                            <ValueContent icon={<Award className="text-saffron" />} title="Excellence" desc="We don't cut corners. Only Tier-1 panels and top-rated inverters." />
-                        </TiltCard>
-                        <TiltCard>
-                            <ValueContent icon={<Users className="text-india-green" />} title="Customer First" desc="Your peace of mind is our priority. We handle all the paperwork." />
-                        </TiltCard>
-                        <TiltCard>
-                            <ValueContent icon={<Target className="text-blue-600" />} title="Transparency" desc="No hidden costs. What you see in the quote is what you pay." />
-                        </TiltCard>
-                        <TiltCard>
-                            <ValueContent icon={<Heart className="text-red-500" />} title="Sustainability" desc="We are committed to a greener, cleaner planet for future generations." />
-                        </TiltCard>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                        <ValueContent
+                            icon={<Award className="w-8 h-8 text-orange-500" />}
+                            title="Excellence"
+                            desc="We don't cut corners. Only Tier-1 panels and top-rated inverters."
+                        />
+                        <ValueContent
+                            icon={<Users className="w-8 h-8 text-green-600" />}
+                            title="Customer First"
+                            desc="Your peace of mind is our priority. We handle all the paperwork."
+                        />
+                        <ValueContent
+                            icon={<Target className="w-8 h-8 text-blue-600" />}
+                            title="Transparency"
+                            desc="No hidden costs. What you see in the quote is what you pay."
+                        />
+                        <ValueContent
+                            icon={<Heart className="w-8 h-8 text-red-500" />}
+                            title="Sustainability"
+                            desc="We are committed to a greener, cleaner planet for future generations."
+                        />
                     </div>
                 </div>
             </section>
@@ -143,14 +150,12 @@ function Badge({ text }: any) {
 
 function ValueContent({ icon, title, desc }: any) {
     return (
-        <div className="p-8 text-center h-full flex flex-col items-center justify-center group">
-            <div className="w-16 h-16 bg-neutral-50 dark:bg-neutral-800 rounded-2xl flex items-center justify-center mb-6 shadow-inner group-hover:scale-110 transition-transform duration-300">
-                <div className="transform scale-125">
-                    {icon}
-                </div>
+        <div className="flex flex-col items-center text-center group">
+            <div className="w-20 h-20 bg-neutral-900 rounded-3xl flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110 group-hover:bg-neutral-800">
+                {icon}
             </div>
-            <h3 className="text-xl font-bold mb-3 text-neutral-900 dark:text-white">{title}</h3>
-            <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">{desc}</p>
+            <h3 className="text-xl font-bold mb-3 text-white">{title}</h3>
+            <p className="text-neutral-400 text-sm leading-relaxed max-w-xs">{desc}</p>
         </div>
     )
 }
